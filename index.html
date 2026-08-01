@@ -4,16 +4,24 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A Letter For You</title>
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>A Secret Journey ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="css/style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
@@ -21,83 +29,93 @@
 
 <body>
 
-<!-- Cursor -->
-
-<div id="cursor"></div>
-
 <!-- Loader -->
 
 <div id="loader">
 
-<div class="loader-center">
-
-<h1 id="loadingTitle">
-Preparing Your Surprise
-</h1>
-
-<div class="progress">
-
-<div class="progress-fill"></div>
+<div class="loader-circle"></div>
 
 </div>
 
-<p id="loadingText">
-Please wait...
-</p>
+<!-- Mouse Light -->
 
-</div>
+<div class="mouse-light"></div>
 
-</div>
-
-<!-- Background -->
-
-<div class="background">
+<!-- Stars -->
 
 <div class="stars"></div>
 
-<div class="gradient"></div>
+<!-- Floating Glow -->
 
-</div>
+<div class="glow-orb glow-one"></div>
 
-<!-- Main -->
+<div class="glow-orb glow-two"></div>
+
+<!-- Hero -->
 
 <section class="hero">
 
-<div class="glass">
+<div class="glass hero-card">
 
-<span class="top-text">
-A Journey Begins Here
-</span>
+<div class="badge">
+
+✨ JUST FOR YOU
+
+</div>
 
 <h1>
 
-Someone Left<br>
+A Secret
 
-A Letter For You
+Journey
 
 </h1>
 
 <p>
 
-Every memory deserves a beautiful beginning.
+Someone spent time creating
+something beautiful just for you.
+
+Take a deep breath...
+
+and begin the journey.
 
 </p>
 
-<div class="letter" id="letter">
+<!-- Envelope -->
 
-<div class="flap"></div>
+<div class="envelope"
+id="envelope">
 
-<div class="paper">
+<div class="envelope-shadow"></div>
 
-❤
+<div class="envelope-back">
+
+<div class="envelope-left"></div>
+
+<div class="envelope-right"></div>
+
+<div class="envelope-bottom"></div>
 
 </div>
 
+<div class="letter-paper">
+
+<span>❤️</span>
+
 </div>
 
-<button id="start">
+<div class="envelope-top"></div>
 
-Open Letter →
+</div>
+
+<button
+
+class="btn"
+
+id="startJourney">
+
+Open Letter
 
 </button>
 
@@ -105,7 +123,7 @@ Open Letter →
 
 </section>
 
-<script src="js/main.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 
