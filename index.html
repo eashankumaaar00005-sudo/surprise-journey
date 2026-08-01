@@ -1,60 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>A Letter For You</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 
-<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
-
-<script src="https://unpkg.com/split-type"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
 </head>
 
 <body>
 
+<!-- Cursor -->
+
+<div id="cursor"></div>
+
+<!-- Loader -->
+
 <div id="loader">
 
-<div class="loader-content">
+<div class="loader-center">
 
-<h2 id="loadingText">Initializing...</h2>
+<h1 id="loadingTitle">
+Preparing Your Surprise
+</h1>
 
 <div class="progress">
 
-<div class="bar"></div>
+<div class="progress-fill"></div>
 
 </div>
 
-</div>
-
-</div>
-
-<section class="landing">
-
-<div class="overlay"></div>
-
-<div class="content">
-
-<h1>A Letter For You</h1>
-
-<p>
-Someone left something beautiful...
+<p id="loadingText">
+Please wait...
 </p>
 
-<div class="envelope">
-
-<img src="assets/images/envelope.png">
+</div>
 
 </div>
 
-<button id="start">Open Letter</button>
+<!-- Background -->
+
+<div class="background">
+
+<div class="stars"></div>
+
+<div class="gradient"></div>
+
+</div>
+
+<!-- Main -->
+
+<section class="hero">
+
+<div class="glass">
+
+<span class="top-text">
+A Journey Begins Here
+</span>
+
+<h1>
+
+Someone Left<br>
+
+A Letter For You
+
+</h1>
+
+<p>
+
+Every memory deserves a beautiful beginning.
+
+</p>
+
+<div class="letter" id="letter">
+
+<div class="flap"></div>
+
+<div class="paper">
+
+❤
+
+</div>
+
+</div>
+
+<button id="start">
+
+Open Letter →
+
+</button>
 
 </div>
 
@@ -63,4 +108,5 @@ Someone left something beautiful...
 <script src="js/main.js"></script>
 
 </body>
+
 </html>
