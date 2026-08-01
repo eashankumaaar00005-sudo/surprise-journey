@@ -1,398 +1,72 @@
-/* ===========================
-   RESET
-=========================== */
+/* ===================================================
+   SURPRISE JOURNEY V2
+   Premium Base Styles
+=================================================== */
+
+:root{
+
+--bg:#07080d;
+--card:rgba(255,255,255,.05);
+--border:rgba(255,255,255,.08);
+
+--gold:#FFD369;
+--orange:#FF8C42;
+
+--white:#ffffff;
+--text:#d9d9d9;
+
+--radius:28px;
+
+}
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    font-family:'Poppins',sans-serif;
-    background:#090909;
-    color:#fff;
+html{
+scroll-behavior:smooth;
 }
 
-/* ===========================
-   BACKGROUND
-=========================== */
-
-.background{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    background:
-    radial-gradient(circle at top,#3b2d6b 0%,#151515 40%,#090909 100%);
-    z-index:-3;
-}
-
-.gradient{
-    position:absolute;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-    background:rgba(255,150,80,.08);
-    filter:blur(130px);
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    animation:pulse 8s ease infinite;
-}
-
-@keyframes pulse{
-
-0%{
-transform:translate(-50%,-50%) scale(.9);
-}
-
-50%{
-transform:translate(-50%,-50%) scale(1.15);
-}
-
-100%{
-transform:translate(-50%,-50%) scale(.9);
-}
-
-}
-
-/* ===========================
-   STARS
-=========================== */
-
-.stars{
-    position:absolute;
-    inset:0;
-    background-image:
-    radial-gradient(#ffffffcc 1px,transparent 1px);
-    background-size:40px 40px;
-    opacity:.18;
-    animation:starsMove 60s linear infinite;
-}
-
-@keyframes starsMove{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(-400px);
-}
-
-}
-
-/* ===========================
-   LOADER
-=========================== */
-
-#loader{
-
-position:fixed;
-inset:0;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:#050505;
-
-z-index:9999;
-
-}
-
-.loader-center{
-
-width:320px;
-
-}
-
-#loadingTitle{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:48px;
-
-text-align:center;
-
-margin-bottom:25px;
-
-}
-
-.progress{
+body{
 
 width:100%;
+min-height:100vh;
 
-height:8px;
+background:var(--bg);
 
-background:#1d1d1d;
+font-family:'Poppins',sans-serif;
 
-border-radius:50px;
+color:white;
 
-overflow:hidden;
-
-}
-
-.progress-fill{
-
-width:0%;
-
-height:100%;
-
-background:linear-gradient(90deg,#ffcc80,#ff8a65);
-
-}
-
-#loadingText{
-
-margin-top:20px;
-
-text-align:center;
-
-opacity:.7;
-
-}
-
-/* ===========================
-   HERO
-=========================== */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:20px;
-
-}
-
-/* ===========================
-   GLASS CARD
-=========================== */
-
-.glass{
-
-width:min(92%,700px);
-
-padding:60px;
-
-border-radius:30px;
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.08);
-
-box-shadow:
-
-0 25px 60px rgba(0,0,0,.45),
-
-0 0 40px rgba(255,180,120,.08);
-
-text-align:center;
-
-}
-
-/* ===========================
-   TEXT
-=========================== */
-
-.top-text{
-
-letter-spacing:5px;
-
-font-size:12px;
-
-color:#ffcc80;
-
-text-transform:uppercase;
-
-}
-
-.glass h1{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:72px;
-
-font-weight:700;
-
-line-height:1;
-
-margin:25px 0;
-
-}
-
-.glass p{
-
-font-size:18px;
-
-opacity:.8;
-
-margin-bottom:45px;
-
-}
-
-/* ===========================
-   ENVELOPE
-=========================== */
-
-.letter{
+overflow-x:hidden;
 
 position:relative;
 
-width:220px;
-
-height:140px;
-
-margin:0 auto 45px;
-
-cursor:pointer;
-
-transition:.4s;
-
-}
-
-.letter:hover{
-
-transform:translateY(-10px);
-
-}
-
-/* envelope body */
-
-.letter::before{
-
-content:"";
-
-position:absolute;
-
-left:0;
-bottom:0;
-
-width:100%;
-height:100%;
-
-background:#f2e3c8;
-
-border-radius:8px;
-
-}
-
-/* flap */
-
-.flap{
-
-position:absolute;
-
-left:0;
-top:0;
-
-width:100%;
-height:100%;
-
-clip-path:polygon(0 0,100% 0,50% 55%);
-
-background:#e8d6b4;
-
-transform-origin:top;
-
-transition:.7s;
-
-z-index:3;
-
-}
-
-/* paper */
-
-.paper{
-
-position:absolute;
-
-left:50%;
-
-bottom:15px;
-
-transform:translateX(-50%);
-
-width:170px;
-
-height:110px;
-
-background:white;
-
-border-radius:6px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:34px;
-
-color:#ff4d6d;
-
-transition:.7s;
-
-z-index:2;
-
-}
-
-.letter:hover .flap{
-
-transform:rotateX(180deg);
-
-}
-
-.letter:hover .paper{
-
-bottom:75px;
-
 }
 
 /* ===========================
-   BUTTON
+   SCROLLBAR
 =========================== */
 
-button{
-
-padding:18px 55px;
-
-border:none;
-
-border-radius:100px;
-
-font-size:18px;
-
-font-weight:600;
-
-cursor:pointer;
-
-background:linear-gradient(90deg,#ffb74d,#ff7043);
-
-color:#111;
-
-transition:.35s;
-
-box-shadow:0 15px 35px rgba(255,120,60,.35);
-
+::-webkit-scrollbar{
+width:10px;
 }
 
-button:hover{
+::-webkit-scrollbar-track{
+background:#111;
+}
 
-transform:translateY(-4px) scale(1.04);
+::-webkit-scrollbar-thumb{
 
-box-shadow:0 20px 45px rgba(255,120,60,.55);
+background:linear-gradient(
+180deg,
+var(--gold),
+var(--orange)
+);
+
+border-radius:50px;
 
 }
 
@@ -405,67 +79,347 @@ box-shadow:0 20px 45px rgba(255,120,60,.55);
 position:fixed;
 
 width:18px;
-
 height:18px;
 
 border-radius:50%;
 
-background:#ffd180;
+background:var(--gold);
 
 pointer-events:none;
 
+z-index:999999;
+
+filter:blur(1px);
+
 mix-blend-mode:screen;
 
-filter:blur(2px);
-
-z-index:99999;
+transition:
+width .3s,
+height .3s;
 
 }
 
 /* ===========================
-   RESPONSIVE
+   BACKGROUND
 =========================== */
 
-@media(max-width:768px){
+.background{
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+z-index:-10;
+
+background:
+
+radial-gradient(circle at top,
+#39215d 0%,
+#151515 45%,
+#07080d 100%);
+
+}
+
+/* ===========================
+   LIGHT
+=========================== */
+
+.background::before{
+
+content:"";
+
+position:absolute;
+
+width:900px;
+height:900px;
+
+left:50%;
+top:-250px;
+
+transform:translateX(-50%);
+
+background:
+
+radial-gradient(circle,
+
+rgba(255,180,80,.18),
+
+transparent 70%);
+
+filter:blur(120px);
+
+animation:lightMove 10s ease infinite;
+
+}
+
+@keyframes lightMove{
+
+0%{
+
+transform:
+translateX(-50%)
+scale(.9);
+
+}
+
+50%{
+
+transform:
+translateX(-50%)
+scale(1.2);
+
+}
+
+100%{
+
+transform:
+translateX(-50%)
+scale(.9);
+
+}
+
+}
+
+/* ===========================
+   STARS
+=========================== */
+
+.stars{
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+radial-gradient(#ffffffcc 1px,transparent 1px);
+
+background-size:55px 55px;
+
+opacity:.18;
+
+animation:stars 80s linear infinite;
+
+}
+
+@keyframes stars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-800px);
+
+}
+
+}
+
+/* ===========================
+   FLOATING PARTICLES
+=========================== */
+
+.particle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:white;
+
+opacity:.35;
+
+animation:float linear infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:
+translateY(100vh)
+scale(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:.5;
+
+}
+
+100%{
+
+transform:
+translateY(-120px)
+scale(1);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px;
+
+position:relative;
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
 
 .glass{
 
-padding:35px 20px;
+width:min(760px,95%);
+
+padding:70px 60px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(22px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:32px;
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.45),
+
+0 0 80px rgba(255,170,70,.05);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* top shine */
+
+.glass::before{
+
+content:"";
+
+position:absolute;
+
+left:-50%;
+
+top:-50%;
+
+width:320px;
+
+height:700px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.08),
+
+transparent
+
+);
+
+transform:rotate(25deg);
+
+animation:shine 8s linear infinite;
+
+}
+
+@keyframes shine{
+
+from{
+
+left:-60%;
+
+}
+
+to{
+
+left:140%;
+
+}
+
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.top-text{
+
+display:inline-block;
+
+padding:10px 22px;
+
+background:rgba(255,255,255,.06);
+
+border-radius:100px;
+
+letter-spacing:3px;
+
+font-size:12px;
+
+color:var(--gold);
+
+margin-bottom:30px;
+
+text-transform:uppercase;
 
 }
 
 .glass h1{
 
-font-size:46px;
+font-family:"Cormorant Garamond",serif;
+
+font-size:82px;
+
+line-height:.95;
+
+margin-bottom:25px;
+
+font-weight:700;
 
 }
 
 .glass p{
 
-font-size:15px;
+font-size:18px;
 
-}
+line-height:1.8;
 
-.letter{
+opacity:.8;
 
-width:170px;
+max-width:520px;
 
-height:110px;
-
-}
-
-.paper{
-
-width:130px;
-
-height:90px;
-
-}
-
-button{
-
-width:100%;
-
-}
+margin:auto;
 
 }
