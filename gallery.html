@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Memory Gallery</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/gallery.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+</head>
+
+<body class="gallery-page">
+
+<div class="background-glow"></div>
+
+<h1 class="title">
+Our Memories
+</h1>
+
+<p class="subtitle">
+Every picture tells a story...
+</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="assets/photos/1.jpg">
+</div>
+
+<div class="photo">
+<img src="assets/photos/2.jpg">
+</div>
+
+<div class="photo">
+<img src="assets/photos/3.jpg">
+</div>
+
+<div class="photo">
+<img src="assets/photos/4.jpg">
+</div>
+
+<div class="photo">
+<img src="assets/photos/5.jpg">
+</div>
+
+<div class="photo">
+<img src="assets/photos/6.jpg">
+</div>
+
+</div>
+
+<audio
+id="music"
+loop>
+
+<source
+src="assets/music/song.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<div id="viewer">
+
+<span id="close">
+×
+</span>
+
+<img id="preview">
+
+</div>
+
+<button id="nextGallery">
+
+Continue →
+
+</button>
+
+<script src="js/gallery.js"></script>
+
+</body>
+
+</html>
