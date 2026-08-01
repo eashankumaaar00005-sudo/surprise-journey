@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Secret Vault</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/vault.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+</head>
+
+<body class="vault-page">
+
+<div class="bg-glow"></div>
+
+<div class="vault-card">
+
+<div class="lock-circle">
+
+<div class="lock-center">
+
+🔒
+
+</div>
+
+</div>
+
+<h1>Secret Diary</h1>
+
+<p>
+
+Only one code can unlock what's hidden...
+
+</p>
+
+<input
+type="password"
+maxlength="4"
+placeholder="••••"
+id="pin">
+
+<button id="unlock">
+
+Unlock
+
+</button>
+
+<p id="status"></p>
+
+</div>
+
+<script src="js/vault.js"></script>
+
+</body>
+
+</html>
