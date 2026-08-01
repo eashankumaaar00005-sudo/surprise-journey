@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Journey Map</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/map.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+</head>
+
+<body class="map-page">
+
+<div class="noise"></div>
+
+<section class="map-container">
+
+<h1>Our Little Journey</h1>
+
+<p class="subtitle">
+Follow the path and unlock every memory...
+</p>
+
+<div class="map">
+
+<!-- SVG PATH -->
+
+<svg class="path-svg"
+viewBox="0 0 1000 600">
+
+<path id="journeyPath"
+
+d="M100 500
+C220 350 300 350 400 430
+S650 540 720 300
+S880 100 930 200"
+
+stroke="#d4b06d"
+
+stroke-width="6"
+
+fill="none"
+
+stroke-linecap="round"
+
+stroke-dasharray="2000"
+
+stroke-dashoffset="2000"/>
+
+</svg>
+
+<!-- POINT 1 -->
+
+<div class="point active"
+id="point1"
+style="left:90px;top:470px;">
+
+<span>📜</span>
+
+<p>Letter</p>
+
+</div>
+
+<!-- POINT 2 -->
+
+<div class="point"
+id="point2"
+style="left:390px;top:395px;">
+
+<span>🕯️</span>
+
+<p>Memory</p>
+
+</div>
+
+<!-- POINT 3 -->
+
+<div class="point"
+id="point3"
+style="left:705px;top:280px;">
+
+<span>🔐</span>
+
+<p>Secret</p>
+
+</div>
+
+<!-- POINT 4 -->
+
+<div class="point"
+id="point4"
+style="left:905px;top:180px;">
+
+<span>🎁</span>
+
+<p>Surprise</p>
+
+</div>
+
+</div>
+
+<button id="nextBtn">
+
+Start Journey →
+
+</button>
+
+</section>
+
+<script src="js/map.js"></script>
+
+</body>
+
+</html>
