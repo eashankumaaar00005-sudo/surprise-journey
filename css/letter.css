@@ -1,0 +1,402 @@
+/* ===================================
+   LETTER PAGE
+=================================== */
+
+.letter-page{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top,#2c1b4d 0%,#151515 45%,#090909 100%);
+    font-family:'Poppins',sans-serif;
+}
+
+/* Background Glow */
+
+.letter-page::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle,#ffb56b20 0%,transparent 60%);
+    animation:glow 8s ease-in-out infinite;
+    pointer-events:none;
+}
+
+@keyframes glow{
+
+0%,100%{
+transform:scale(1);
+opacity:.6;
+}
+
+50%{
+transform:scale(1.3);
+opacity:1;
+}
+
+}
+
+/* ===========================
+   WRAPPER
+=========================== */
+
+.letter-wrapper{
+
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+
+}
+
+/* ===========================
+   ENVELOPE
+=========================== */
+
+.envelope{
+
+position:relative;
+
+width:430px;
+height:290px;
+
+perspective:1500px;
+
+}
+
+/* Bottom */
+
+.envelope::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:0;
+
+width:100%;
+height:100%;
+
+background:#ead8b4;
+
+border-radius:10px;
+
+box-shadow:
+0 35px 80px rgba(0,0,0,.45);
+
+}
+
+/* Flap */
+
+.envelope-top{
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:#dfc99c;
+
+clip-path:polygon(0 0,100% 0,50% 58%);
+
+transform-origin:top;
+
+z-index:6;
+
+transition:1s;
+
+}
+
+/* ===========================
+   PAPER
+=========================== */
+
+.letter-paper{
+
+position:absolute;
+
+left:50%;
+
+bottom:20px;
+
+transform:translateX(-50%);
+
+width:340px;
+
+height:240px;
+
+background:#fffdf7;
+
+border-radius:8px;
+
+padding:35px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+align-items:flex-start;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.2);
+
+transition:1s;
+
+z-index:3;
+
+overflow:hidden;
+
+}
+
+/* Hover Preview */
+
+.envelope:hover .envelope-top{
+
+transform:rotateX(180deg);
+
+}
+
+.envelope:hover .letter-paper{
+
+bottom:120px;
+
+}
+
+/* ===========================
+   PAPER TEXT
+=========================== */
+
+.letter-paper h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:42px;
+
+margin-bottom:25px;
+
+color:#2c2c2c;
+
+}
+
+#typewriter{
+
+font-size:17px;
+
+line-height:1.9;
+
+color:#444;
+
+min-height:130px;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+#continueBtn{
+
+margin-top:auto;
+
+padding:14px 34px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#ffb74d,#ff7043);
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+color:#111;
+
+transition:.3s;
+
+align-self:center;
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
+#continueBtn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 25px rgba(255,130,60,.35);
+
+}
+
+/* ===========================
+   OPEN STATE
+=========================== */
+
+.envelope.open .envelope-top{
+
+transform:rotateX(180deg);
+
+}
+
+.envelope.open .letter-paper{
+
+bottom:160px;
+
+height:420px;
+
+}
+
+/* ===========================
+   PAPER LINES
+=========================== */
+
+.letter-paper::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+repeating-linear-gradient(
+
+transparent,
+
+transparent 29px,
+
+rgba(0,0,0,.04) 30px
+
+);
+
+pointer-events:none;
+
+}
+
+/* ===========================
+   SHADOW
+=========================== */
+
+.envelope::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:-30px;
+
+transform:translateX(-50%);
+
+width:300px;
+
+height:35px;
+
+background:rgba(0,0,0,.25);
+
+filter:blur(25px);
+
+border-radius:50%;
+
+}
+
+/* ===========================
+   FLOAT
+=========================== */
+
+@keyframes floating{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.envelope{
+
+animation:floating 5s ease-in-out infinite;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.envelope{
+
+width:320px;
+height:220px;
+
+}
+
+.letter-paper{
+
+width:255px;
+height:180px;
+
+padding:22px;
+
+}
+
+.envelope.open .letter-paper{
+
+height:350px;
+bottom:130px;
+
+}
+
+.letter-paper h2{
+
+font-size:32px;
+
+}
+
+#typewriter{
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+#continueBtn{
+
+width:100%;
+
+}
+
+}
