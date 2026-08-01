@@ -1,0 +1,319 @@
+/* ==========================================
+   VAULT PAGE
+========================================== */
+
+.vault-page{
+    margin:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:
+    radial-gradient(circle at top,#3d2b1f 0%,#161616 45%,#080808 100%);
+    color:#fff;
+    position:relative;
+}
+
+/* Background Glow */
+
+.bg-glow{
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    rgba(255,180,90,.18),
+    transparent 70%);
+    filter:blur(120px);
+    animation:glowMove 8s ease-in-out infinite;
+}
+
+@keyframes glowMove{
+
+0%,100%{
+transform:scale(.9);
+}
+
+50%{
+transform:scale(1.2);
+}
+
+}
+
+/* =======================
+   CARD
+======================= */
+
+.vault-card{
+
+position:relative;
+
+width:420px;
+
+padding:50px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.45);
+
+z-index:2;
+
+}
+
+/* =======================
+   LOCK
+======================= */
+
+.lock-circle{
+
+width:140px;
+height:140px;
+
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(145deg,#f6d365,#d89c32);
+
+box-shadow:
+0 0 30px rgba(255,180,80,.45);
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+.lock-center{
+
+width:90px;
+height:90px;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:#1a1a1a;
+
+font-size:38px;
+
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+/* =======================
+   TEXT
+======================= */
+
+.vault-card h1{
+
+margin-top:35px;
+
+font-family:"Cormorant Garamond";
+
+font-size:52px;
+
+}
+
+.vault-card p{
+
+margin-top:15px;
+
+opacity:.75;
+
+line-height:1.7;
+
+}
+
+/* =======================
+   INPUT
+======================= */
+
+#pin{
+
+margin-top:35px;
+
+width:100%;
+
+padding:18px;
+
+font-size:28px;
+
+letter-spacing:15px;
+
+text-align:center;
+
+border:none;
+
+outline:none;
+
+border-radius:16px;
+
+background:#ffffff10;
+
+color:white;
+
+}
+
+/* =======================
+   BUTTON
+======================= */
+
+#unlock{
+
+margin-top:25px;
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:60px;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+background:
+linear-gradient(90deg,#ffcf71,#ff8a47);
+
+transition:.3s;
+
+}
+
+#unlock:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 18px 40px rgba(255,150,50,.4);
+
+}
+
+/* =======================
+   STATUS
+======================= */
+
+#status{
+
+margin-top:18px;
+
+min-height:24px;
+
+font-size:15px;
+
+color:#ffd37d;
+
+}
+
+/* =======================
+   SUCCESS
+======================= */
+
+.success .lock-circle{
+
+animation:none;
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 60px rgba(255,220,120,.8);
+
+}
+
+/* =======================
+   SHAKE
+======================= */
+
+.shake{
+
+animation:shake .45s;
+
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+20%{transform:translateX(-8px);}
+40%{transform:translateX(8px);}
+60%{transform:translateX(-8px);}
+80%{transform:translateX(8px);}
+100%{transform:translateX(0);}
+
+}
+
+/* =======================
+   MOBILE
+======================= */
+
+@media(max-width:768px){
+
+.vault-card{
+
+width:92%;
+
+padding:35px 25px;
+
+}
+
+.lock-circle{
+
+width:110px;
+height:110px;
+
+}
+
+.lock-center{
+
+width:70px;
+height:70px;
+
+font-size:30px;
+
+}
+
+.vault-card h1{
+
+font-size:40px;
+
+}
+
+#pin{
+
+font-size:24px;
+
+letter-spacing:10px;
+
+}
+
+}
