@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Letter For You</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/letter.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
 </head>
 
 <body>
 
+<div id="loader">
+
+<div class="loader-content">
+
+<h2 id="loadingText">Initializing...</h2>
+
+<div class="progress">
+
+<div class="bar"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="landing">
+
 <div class="overlay"></div>
 
-<section class="hero">
+<div class="content">
 
-<div class="letter-box">
+<h1>A Letter For You</h1>
 
-<h3>You've got a message...</h3>
+<p>
+Someone left something beautiful...
+</p>
 
-<p>Click the letter to begin your journey.</p>
+<div class="envelope">
 
-<img src="assets/images/envelope.png" class="envelope">
+<img src="assets/images/envelope.png">
 
-<button id="openLetter">
+</div>
 
-Open The Letter
+<button id="start">
+
+Open Letter
 
 </button>
 
@@ -39,5 +63,4 @@ Open The Letter
 <script src="js/main.js"></script>
 
 </body>
-
 </html>
