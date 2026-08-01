@@ -1,77 +1,168 @@
+/* ===========================
+   RESET
+=========================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body{
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#090909;
+    color:#fff;
+}
 
-font-family:Poppins;
-background:#111;
-overflow:hidden;
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top,#3b2d6b 0%,#151515 40%,#090909 100%);
+    z-index:-3;
+}
+
+.gradient{
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:rgba(255,150,80,.08);
+    filter:blur(130px);
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    animation:pulse 8s ease infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:translate(-50%,-50%) scale(.9);
+}
+
+50%{
+transform:translate(-50%,-50%) scale(1.15);
+}
+
+100%{
+transform:translate(-50%,-50%) scale(.9);
+}
 
 }
+
+/* ===========================
+   STARS
+=========================== */
+
+.stars{
+    position:absolute;
+    inset:0;
+    background-image:
+    radial-gradient(#ffffffcc 1px,transparent 1px);
+    background-size:40px 40px;
+    opacity:.18;
+    animation:starsMove 60s linear infinite;
+}
+
+@keyframes starsMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-400px);
+}
+
+}
+
+/* ===========================
+   LOADER
+=========================== */
 
 #loader{
 
 position:fixed;
-width:100%;
-height:100%;
-background:#070707;
+inset:0;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-z-index:999;
+background:#050505;
+
+z-index:9999;
 
 }
 
-.loader-content{
+.loader-center{
 
 width:320px;
-text-align:center;
 
 }
 
-.loader-content h2{
+#loadingTitle{
 
-font-family:"Cormorant Garamond";
-color:white;
-font-size:38px;
+font-family:"Cormorant Garamond",serif;
 
-margin-bottom:30px;
+font-size:48px;
+
+text-align:center;
+
+margin-bottom:25px;
 
 }
 
 .progress{
 
-height:5px;
-background:#222;
+width:100%;
+
+height:8px;
+
+background:#1d1d1d;
+
 border-radius:50px;
+
 overflow:hidden;
 
 }
 
-.bar{
+.progress-fill{
 
 width:0%;
 
 height:100%;
 
-background:#d6a96c;
+background:linear-gradient(90deg,#ffcc80,#ff8a65);
 
 }
 
-.landing{
+#loadingText{
+
+margin-top:20px;
+
+text-align:center;
+
+opacity:.7;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
 
 height:100vh;
-
-background:url("../assets/images/desk-bg.jpg");
-
-background-size:cover;
-
-background-position:center;
 
 display:flex;
 
@@ -79,82 +170,91 @@ justify-content:center;
 
 align-items:center;
 
-position:relative;
-
-opacity:0;
+padding:20px;
 
 }
 
-.overlay{
+/* ===========================
+   GLASS CARD
+=========================== */
 
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(2px);
+.glass{
 
-}
+width:min(92%,700px);
 
-.content{
+padding:60px;
 
-position:relative;
+border-radius:30px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.45),
+
+0 0 40px rgba(255,180,120,.08);
 
 text-align:center;
 
-z-index:2;
+}
 
-color:white;
+/* ===========================
+   TEXT
+=========================== */
+
+.top-text{
+
+letter-spacing:5px;
+
+font-size:12px;
+
+color:#ffcc80;
+
+text-transform:uppercase;
 
 }
 
-.content h1{
+.glass h1{
+
+font-family:"Cormorant Garamond",serif;
 
 font-size:72px;
 
-font-family:"Cormorant Garamond";
+font-weight:700;
 
-margin-bottom:20px;
+line-height:1;
+
+margin:25px 0;
 
 }
 
-.content p{
+.glass p{
 
 font-size:18px;
 
 opacity:.8;
 
-margin-bottom:50px;
+margin-bottom:45px;
 
 }
 
-.envelope img{
+/* ===========================
+   ENVELOPE
+=========================== */
 
-width:300px;
+.letter{
 
-transition:.5s;
+position:relative;
 
-cursor:pointer;
+width:220px;
 
-}
+height:140px;
 
-.envelope img:hover{
-
-transform:translateY(-15px) rotate(-3deg);
-
-}
-
-button{
-
-margin-top:40px;
-
-padding:18px 60px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:18px;
-
-background:#d6a96c;
+margin:0 auto 45px;
 
 cursor:pointer;
 
@@ -162,8 +262,210 @@ transition:.4s;
 
 }
 
+.letter:hover{
+
+transform:translateY(-10px);
+
+}
+
+/* envelope body */
+
+.letter::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:0;
+
+width:100%;
+height:100%;
+
+background:#f2e3c8;
+
+border-radius:8px;
+
+}
+
+/* flap */
+
+.flap{
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+clip-path:polygon(0 0,100% 0,50% 55%);
+
+background:#e8d6b4;
+
+transform-origin:top;
+
+transition:.7s;
+
+z-index:3;
+
+}
+
+/* paper */
+
+.paper{
+
+position:absolute;
+
+left:50%;
+
+bottom:15px;
+
+transform:translateX(-50%);
+
+width:170px;
+
+height:110px;
+
+background:white;
+
+border-radius:6px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:34px;
+
+color:#ff4d6d;
+
+transition:.7s;
+
+z-index:2;
+
+}
+
+.letter:hover .flap{
+
+transform:rotateX(180deg);
+
+}
+
+.letter:hover .paper{
+
+bottom:75px;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+padding:18px 55px;
+
+border:none;
+
+border-radius:100px;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+background:linear-gradient(90deg,#ffb74d,#ff7043);
+
+color:#111;
+
+transition:.35s;
+
+box-shadow:0 15px 35px rgba(255,120,60,.35);
+
+}
+
 button:hover{
 
-transform:scale(1.05);
+transform:translateY(-4px) scale(1.04);
+
+box-shadow:0 20px 45px rgba(255,120,60,.55);
+
+}
+
+/* ===========================
+   CURSOR
+=========================== */
+
+#cursor{
+
+position:fixed;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+background:#ffd180;
+
+pointer-events:none;
+
+mix-blend-mode:screen;
+
+filter:blur(2px);
+
+z-index:99999;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.glass{
+
+padding:35px 20px;
+
+}
+
+.glass h1{
+
+font-size:46px;
+
+}
+
+.glass p{
+
+font-size:15px;
+
+}
+
+.letter{
+
+width:170px;
+
+height:110px;
+
+}
+
+.paper{
+
+width:130px;
+
+height:90px;
+
+}
+
+button{
+
+width:100%;
+
+}
 
 }
